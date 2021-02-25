@@ -18,6 +18,12 @@
 ### POST
 
 - `/login`
+```json
+{
+	"email": "dupon@gmail.com",
+	"password": "dupon12345"
+}
+```
 
 ## Data
 
