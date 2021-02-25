@@ -1,7 +1,7 @@
 module.exports = (services) => {
     const cat_controller = {
-        getAllCat: async (req, res) => {
-            let result = await services.cat.getAllCat();
+        getAll: async (req, res) => {
+            let result = await services.cat.getAll();
             res.send(result);
         },
         register: async (req, res) => {
