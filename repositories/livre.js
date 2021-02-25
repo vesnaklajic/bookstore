@@ -1,12 +1,12 @@
 module.exports = (models) => {
-    const livre_repository = {
+    const book_repository = {
         getAll: async (data) => {
-            return models.livre.query("SELECT Books.title,Books.author,Categories.name FROM Books,Categories WHERE Books.categoryId=Categories.id");
+            return models.book.query("SELECT Books.title,Books.author,Categories.name FROM Books LEFT JOIN Categories ON Books.categoryId = Categories.id;");
         },
         getById: async (id) => {
-            return models.livre.query("SELECT Books.title,Books.author,Categories.name FROM Books,Categories WHERE Books.categoryId=Categories.id AND Books.id = ? LIMIT 1", [id]);
+            return models.book.query("SELECT Books.title,Books.author,Categories.name FROM Books,Categories WHERE Books.categoryId=Categories.id AND Books.id = ? LIMIT 1", [id]);
         }
     }
     
-    return livre_repository;
+    return book_repository;
 }

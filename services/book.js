@@ -1,13 +1,10 @@
 module.exports = (repositories) => {
     const livre_service = {
         getAll: async (data) => {
-            return repositories.livre.getAll();
-        },
-        register: async (data) => {
-            return repositories.livre.register(data);
+            return repositories.book.getAll();
         },
         getById: async (id) => {
-            const rows = await repositories.livre.getById(id);
+            const rows = await repositories.book.getById(id);
             return rows[0];
         }
     }
