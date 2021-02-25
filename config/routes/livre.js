@@ -2,7 +2,7 @@ module.exports = (express, controllers) => {
     
     const router = express.Router();
 
-    router.route('/livre')
+    router.route('/livres')
         .get(controllers.user.getAll)
         .post(controllers.user.register);
 

@@ -1,5 +1,5 @@
 module.exports = (models) => {
-    const category_repository = {
+    const cat_repository = {
         getAll: async (data) => {
             return models.cat.query("select * from Categories");
         },
