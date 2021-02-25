@@ -1,6 +1,6 @@
 module.exports = (repositories) => {
   const user_service = {
-    getAll: async (data) => {
+    getAll: async () => {
       return repositories.user.getAll();
     },
     register: async (data) => {

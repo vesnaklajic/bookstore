@@ -1,7 +1,7 @@
 module.exports = (repositories) => {
     const genre_service = {
-        getAll: async (genres) => {
-            return repositories.genres.getAll();
+        getAll: async () => {
+            return repositories.genre.getAll();
         },
         getById: async (id) => {
             const rows = await repositories.genre.getById(id);

@@ -1,21 +1,20 @@
 // controllers dépendencies
-const genres = require('../config/routes/genres');
 const services = require('../services/index');
 
 // controllers
 const user_controller = require('./user');
-const genres_constroller = require('./genres');
-const cat_controller=require('./cat');
-const livre_controller=require('./livre');
+const genre_constroller = require('./genre');
+const category_controller= require('./category');
+const book_controller = require('./book');
 
 
 
 // create a controllers object for map all the controllers
 const controllers = {
     user: user_controller(services),
-    cat:cat_controller(services),
-    genre: genres_constroller(services),
-    livre: livre_controller(services)
+    category: category_controller(services),
+    genre: genre_constroller(services),
+    book: book_controller(services)
 }
 
 // export our controllers object
