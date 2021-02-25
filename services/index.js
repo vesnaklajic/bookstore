@@ -8,10 +8,15 @@ const repositories = require('../repositories/index'),
 const user_service = require('./user'),
     mailer_service = require('./mailer'),
     bcrypt_service = require('./bcrypt'),
-    jwt_service = require('./jwt');
+    jwt_service = require('./jwt'),
+    genres_service = require('./genres');
+   
+    
+    
 
 // create a services object for map all the services
 const services = {
+    genres: genres_service(repositories),
     user: user_service(repositories),
     mailer: mailer_service(nodemailer),
     bcrypt: bcrypt_service(bcrypt),
