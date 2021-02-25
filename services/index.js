@@ -16,10 +16,10 @@ const user_service = require('./user'),
 const services = {
     genres: genres_service(repositories),
     user: user_service(repositories),
+    livre: livre_service(repositories),
     mailer: mailer_service(nodemailer),
     bcrypt: bcrypt_service(bcrypt),
-    jwt: jwt_service(jwt),
-    livre: livre_service(livre)
+    jwt: jwt_service(jwt)
 }
 
 // export our service object

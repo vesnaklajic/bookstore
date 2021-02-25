@@ -1,4 +1,4 @@
-module.exports = (repositories, bcrypt) => {
+module.exports = (repositories) => {
     const livre_service = {
         getAll: async (data) => {
             return repositories.livre.getAll();
