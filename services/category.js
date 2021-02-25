@@ -1,11 +1,11 @@
 
 module.exports = (repositories, bcrypt) => {
     const cat_service = {
-        getAllCat: async (data) => {
-            return repositories.cat.getAllCat();
+        getAll: async (data) => {
+            return repositories.cat.getAll();
         },
-        getByIdCat: async (id) => {
-            const rows = await repositories.cat.getByIdCat(id);
+        getById: async (id) => {
+            const rows = await repositories.cat.getById(id);
             return rows[0];
         }
     }
