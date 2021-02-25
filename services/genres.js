@@ -1,4 +1,3 @@
-
 module.exports = (repositories) => {
     const genre_service = {
         getAll: async (genres) => {
