@@ -4,8 +4,9 @@ const services = require('../services/index');
 
 // controllers
 const user_controller = require('./user');
-const genres_constroller = require('./genres')
-const cat_controller=require('./cat')
+const genres_constroller = require('./genres');
+const cat_controller=require('./cat');
+const livre_controller=require('./livre');
 
 
 
@@ -13,7 +14,8 @@ const cat_controller=require('./cat')
 const controllers = {
     user: user_controller(services),
     cat:cat_controller(services),
-    genre: genres_constroller(services)
+    genre: genres_constroller(services),
+    livre: livre_controller(services)
 }
 
 // export our controllers object
