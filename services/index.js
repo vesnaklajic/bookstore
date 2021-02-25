@@ -23,4 +23,4 @@ const services = {
 }
 
 // export our service object
-module.exports = services;
+module.exports = services
