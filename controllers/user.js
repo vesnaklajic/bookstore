@@ -36,26 +36,30 @@ module.exports = (services) => {
         if (!userLogin.email || !userLogin.password)
           res.status(400).json("please complete all fields");
         else {
-          const user = await services.user.findByEmail(userLogin.email);
-          console.log("useeerrr", user);
-          if (!user) {
+          const userFound = await services.user.findByEmail(userLogin.email);
+          console.log("useeerrr", userFound);
+          if (!userFound) {
             res.status(404).json("You have to register first");
           } else {
-            console.log(userLogin.email);
             const passwordMatch = await services.bcrypt.comparePassword(
               userLogin.password,
-              user.password
+              userFound.password
             );
             if (!passwordMatch) {
               res.status(400).json("Password is not correct");
             } else {
-              const token = await services.jwt.createToken(
-                JSON.parse(JSON.stringify(user))
-              );
-              res.status(200).json({
-                message: "connection success",
-                token: token,
-              });
+              const tokenData = {
+                id: userFound.id,
+                firstname: userFound.firstname,
+                lastname: userFound.lastname,
+                email: userFound.email
+              }
+              const token = await services.jwt.createToken(tokenData)
+              res.cookie('token', token, {
+                expires: new Date(Date.now() + 60000), // milisecondes = 1 min
+                secure: false, // set to true if your using https
+                httpOnly: true,
+              }).send(`Identification par cookie réussie, date : ${Date.now()}, expire : ${Date(Date.now() + 100000)}`);
             }
           }
         }
