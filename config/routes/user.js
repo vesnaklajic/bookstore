@@ -6,7 +6,7 @@ module.exports = (express, controllers) => {
     .get(controllers.user.getAll)
     .post(controllers.user.register);
 
-  router.post('/login',controllers.user.login);
+  router.post('/login', controllers.user.login);
 
   return router;
 };
