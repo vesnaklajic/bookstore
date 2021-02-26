@@ -1,13 +1,17 @@
 module.exports = (repositories) => {
-    const livre_service = {
+    const book_service = {
         getAll: async (data) => {
             return repositories.book.getAll();
         },
-        getById: async (id) => {
-            const rows = await repositories.book.getById(id);
-            return rows[0];
+        getByFilter: async (dataArray, queryConditionsArray) => {
+            try {
+                const rows = await repositories.book.getByFilter(dataArray, queryConditionsArray);
+                return rows;
+            } catch (error) {
+                console.error(error)
+            }
         }
     }
 
-   return livre_service;
+   return book_service;
 }

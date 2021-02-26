@@ -5,7 +5,7 @@ const models = require('../db/models/index')
 const user_repository = require('./user'),
     genres_repository = require('./genre'),
     category_repository = require('./category'),
-    book_repository =require('./livre');
+    book_repository = require('./book');
 
 // create a repositories object for map all the repositories
 const repositories = {

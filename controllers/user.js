@@ -56,7 +56,7 @@ module.exports = (services) => {
               }
               const token = await services.jwt.createToken(tokenData)
               res.cookie('token', token, {
-                expires: new Date(Date.now() + 60000), // milisecondes = 1 min
+                expires: new Date(Date.now() + 300000), // milisecondes = 5 min
                 secure: false, // set to true if your using https
                 httpOnly: true,
               }).send(`Identification par cookie réussie, date : ${Date.now()}, expire : ${Date(Date.now() + 100000)}`);
