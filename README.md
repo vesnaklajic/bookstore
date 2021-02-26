@@ -8,14 +8,15 @@
 
 ## Endpoints
 
-### GET
+### Public routes
+
+#### GET
 
 - `/users`
-- `/books`
 - `/genres`
 - `/categories`
 
-### POST
+#### POST
 
 - `/login`
 ```json
@@ -24,6 +25,15 @@
 	"password": "dupon12345"
 }
 ```
+
+### Private routes
+
+#### GET
+
+- `/books`
+
+#### POST
+
 
 ## Data
 
