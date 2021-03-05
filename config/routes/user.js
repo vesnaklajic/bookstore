@@ -1,10 +1,14 @@
+const verifyToken = require('../../middlewares/verifyToken')
+
 module.exports = (express, controllers) => {
-    
-    const router = express.Router();
+  const router = express.Router();
 
-    router.route('/users')
-        .get(controllers.user.getAll)
-        .post(controllers.user.register);
+  router
+    .route("/users")
+    .get(verifyToken ,controllers.user.getAll)
+    .post(controllers.user.register);
 
-    return router;
+  router.post('/login', controllers.user.login);
+
+  return router;
 };
